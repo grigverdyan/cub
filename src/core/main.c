@@ -1,6 +1,6 @@
 #include "cub3d.h"
 
-int	main(int argc, t_string *argv)
+int	main(int argc, char **argv)
 {
 	t_data	*data;
 

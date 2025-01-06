@@ -1,5 +1,5 @@
-#ifndef CUB3D_UTILS_H
-# define CUB3D_UTILS_H
+#ifndef UTILS_H
+# define UTILS_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10

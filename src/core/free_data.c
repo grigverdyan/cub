@@ -41,7 +41,7 @@ void	free_parsing_data(t_data *data)
 }
 
 void	full_free_data(t_data *data)
-{	
+{
 	free_textures(data);
 	free_parsing_data(data);
 }

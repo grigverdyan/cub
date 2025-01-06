@@ -1,5 +1,5 @@
-#ifndef CUB3D_STRUCTS_H
-# define CUB3D_STRUCTS_H
+#ifndef STRUCTS_H
+# define STRUCTS_H
 
 typedef char					t_bool;
 typedef char *					t_string;
@@ -20,7 +20,8 @@ typedef struct s_anim_sprite	t_animated_sprite;
 typedef struct s_door_sprites	t_door_sprites;
 typedef struct s_minimap		t_minimap;
 
-struct s_minimap {
+struct s_minimap
+{
 	int				ver_block;
 	int				hor_block;
 	int				ver_pixel;
@@ -30,12 +31,14 @@ struct s_minimap {
 	unsigned int	color;
 };
 
-struct s_mouse {
+struct s_mouse
+{
 	int	hor;
 	int	ver;
 };
 
-struct s_draw {
+struct s_draw
+{
 	int			hit;
 	t_vector	ray;
 	t_tuple		map;
