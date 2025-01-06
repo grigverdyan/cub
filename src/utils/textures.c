@@ -23,9 +23,9 @@ static void	enemy_sprites_init(t_data *data)
 	data->a_sprites[ENEMY_INDEX].sprites[0]
 		= img_init(data->mlx, "textures/enemy0.xpm");
 	data->a_sprites[ENEMY_INDEX].sprites[1]
-		= img_init(data->mlx, "textures/enemy1.xpm");
+		= img_init(data->mlx, "textures/enemy0.xpm");
 	data->a_sprites[ENEMY_INDEX].sprites[2]
-		= img_init(data->mlx, "textures/enemy2.xpm");
+		= img_init(data->mlx, "textures/enemy0.xpm");
 }
 
 static void	sprites_init(t_data *data)
@@ -41,17 +41,17 @@ void	door_init(t_data *data)
 	data->door_frames[0].sprites[0]
 		= img_init(data->mlx, "textures/door0.xpm");
 	data->door_frames[0].sprites[1]
-		= img_init(data->mlx, "textures/door1.xpm");
+		= img_init(data->mlx, "textures/door0.xpm");
 	data->door_frames[0].sprites[2]
-		= img_init(data->mlx, "textures/door2.xpm");
+		= img_init(data->mlx, "textures/door0.xpm");
 	data->door_frames[0].sprites[3]
-		= img_init(data->mlx, "textures/door3.xpm");
+		= img_init(data->mlx, "textures/door0.xpm");
 	data->door_frames[0].sprites[4]
-		= img_init(data->mlx, "textures/door4.xpm");
+		= img_init(data->mlx, "textures/door0.xpm");
 	data->door_frames[0].sprites[5]
-		= img_init(data->mlx, "textures/door5.xpm");
+		= img_init(data->mlx, "textures/door0.xpm");
 	data->door_frames[0].sprites[6]
-		= img_init(data->mlx, "textures/door6.xpm");
+		= img_init(data->mlx, "textures/door0.xpm");
 }
 
 void	textures_init(t_data *data)
@@ -61,7 +61,7 @@ void	textures_init(t_data *data)
 	data->textures->east = img_init(data->mlx, data->texture_paths[_EAST]);
 	data->textures->west = img_init(data->mlx, data->texture_paths[_WEST]);
 	data->textures->south = img_init(data->mlx, data->texture_paths[_SOUTH]);
-	data->textures->door = img_init(data->mlx, "textures/door1.xpm");
+	data->textures->door = img_init(data->mlx, "textures/door0.xpm");
 	sprites_init(data);
 	door_init(data);
 }
