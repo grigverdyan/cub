@@ -2,9 +2,9 @@
 # define CUB3D_H
 
 # ifdef __linux__
-#  include "../../mlx_linux/mlx.h"
+#  include "mlx.h"
 # else
-#  include "../../mlx_macos/mlx.h"
+#  include "mlx.h"
 # endif
 
 # include <math.h>
@@ -80,9 +80,6 @@ t_mouse		init_mouse(void);
 void		mouse_move(int x, int y, t_data *data);
 
 // DRAWING
-
-//draw_doors.c
-void		draw_doors(t_data *data);
 
 //draw_init_sides.c
 void		init_wall_side_hit(t_data *data, t_draw *draw);

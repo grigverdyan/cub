@@ -1,4 +1,4 @@
-#include "/cub3d.h"
+#include "cub3d.h"
 
 void	read_from_input(t_data *data)
 {

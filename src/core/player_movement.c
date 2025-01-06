@@ -1,4 +1,4 @@
-#include "/cub3d.h"
+#include "cub3d.h"
 
 t_bool	can_move(t_data *data, t_vector mov_dir, t_tuple inp_dir)
 {
