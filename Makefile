@@ -29,18 +29,11 @@ SRC_FILES 		= $(shell find src -name "*.c")
 OBJ_DIR			= objs
 OBJS 			= $(SRC_FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-# Platform-dependent compilation
-ifeq ($(OS), Linux)
-	MLX_DIR			= mlx_linux
-	MLX				= $(MLX_DIR)/libmlx.a
-	LDLIBS			= -lmlx -lm -lz -lXext -lX11 -L $(MLX_DIR)
-	INCLUDES		+= -I$(MLX_DIR)
-else
-	MLX_DIR			= mlx_macos
-	MLX				= $(MLX_DIR)/libmlx.a
-	LDLIBS			= -lmlx -lm -framework OpenGl -framework Appkit -L $(MLX_DIR)
-	INCLUDES		+= -I$(MLX_DIR)
-endif
+# MLX lib
+MLX_DIR			= mlx_macos
+MLX				= $(MLX_DIR)/libmlx.a
+LDLIBS			= -lmlx -lm -framework OpenGl -framework Appkit -L $(MLX_DIR)
+INCLUDES		+= -I$(MLX_DIR)
 
 all : $(MLX) $(OBJ_DIR) $(EXEC)
 

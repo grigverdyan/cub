@@ -1,11 +1,7 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# ifdef __linux__
-#  include "mlx.h"
-# else
-#  include "mlx.h"
-# endif
+# include "mlx.h"
 
 # include <math.h>
 # include <unistd.h>
