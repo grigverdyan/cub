@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   text_utils.c                                       :+:      :+:    :+:   */
+/*   tuple.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grverdya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 16:54:05 by grverdya          #+#    #+#             */
-/*   Updated: 2025/01/08 16:54:07 by grverdya         ###   ########.fr       */
+/*   Created: 2025/01/08 16:54:37 by grverdya          #+#    #+#             */
+/*   Updated: 2025/01/08 16:54:39 by grverdya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	text_len(t_text text)
+t_tuple	new_tuple(int x, int y)
 {
-	int	len;
+	t_tuple	new;
 
-	len = -1;
-	if (!text)
-		return (0);
-	while (text[++len])
-		;
-	return (len);
+	new.x = x;
+	new.y = y;
+	return (new);
+}
+
+t_tuple	vector_to_tuple(t_vector vector)
+{
+	return (new_tuple((int)vector.x, (int)vector.y));
 }

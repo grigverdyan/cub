@@ -1,40 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   order.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grverdya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 16:53:01 by grverdya          #+#    #+#             */
-/*   Updated: 2025/01/08 16:53:02 by grverdya         ###   ########.fr       */
+/*   Created: 2025/01/08 16:54:32 by grverdya          #+#    #+#             */
+/*   Updated: 2025/01/08 16:54:33 by grverdya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	guard_free(t_string str)
+t_order	new_order(int order, double dist)
 {
-	if (!(str))
-		return ;
-	free(str);
+	t_order	new;
+
+	new.order = order;
+	new.dist = dist;
+	return (new);
 }
 
-void	ft_free(void *data)
+void	swap_orders(t_order *first, t_order *second)
 {
-	if (!data)
-		return ;
-	free(data);
-	data = NULL;
+	t_order	temp;
+
+	temp = *first;
+	*first = *second;
+	*second = temp;
 }
 
-void	free_array(t_text arr)
+void	sort_order(t_order *order, int count)
 {
 	int	i;
+	int	j;
 
 	i = -1;
-	if (!arr)
-		return ;
-	while (arr[++i])
-		guard_free(arr[i]);
-	free(arr);
+	while (++i < count - 1)
+	{
+		j = -1;
+		while (++j < count - i - 1)
+		{
+			if (order[j].dist > order[j + 1].dist)
+				swap_orders(order + j, order + j + 1);
+		}
+	}
 }

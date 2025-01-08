@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   text_utils.c                                       :+:      :+:    :+:   */
+/*   sprites_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grverdya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 16:54:05 by grverdya          #+#    #+#             */
-/*   Updated: 2025/01/08 16:54:07 by grverdya         ###   ########.fr       */
+/*   Created: 2025/01/08 16:52:09 by grverdya          #+#    #+#             */
+/*   Updated: 2025/01/08 16:52:11 by grverdya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	text_len(t_text text)
+int	tex_y(t_sprite_draw draw_data, int row)
 {
-	int	len;
+	int	d;
 
-	len = -1;
-	if (!text)
-		return (0);
-	while (text[++len])
-		;
-	return (len);
+	d = (row) * 256 - WIN_HEIGHT * 128 + draw_data.sprite_height * 128;
+	return (((d * draw_data.texture_height) / draw_data.sprite_height) / 256);
+}
+
+int	tex_x(t_sprite_draw draw_data, int col)
+{
+	return ((int)(256 * (col - (-draw_data.sprite_width / 2
+				+ draw_data.sprite_screenx)) * draw_data.texture_width
+		/ draw_data.sprite_width) / 256);
 }
